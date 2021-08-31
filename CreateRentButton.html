@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function ButtonClick() {
+            var entityOption = {}; 
+            entityFormOptions["entityName"] = "cr03e_cartransferreport";
+
+            // Open the form.
+            Xrm.Navigation.openForm(entityFormOptions).then(
+                function (success) {
+                    console.log(success);
+                },
+                function (error) {
+                    console.log(error);
+                });
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Create rent report" onclick="ButtonClick()"/>
+</body>
+</html>

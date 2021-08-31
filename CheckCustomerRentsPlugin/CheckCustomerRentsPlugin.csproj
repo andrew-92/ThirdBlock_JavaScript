@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19AC79C2-8FCD-4156-9822-F2CEA8988B55}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CheckCustomerRentsPlugin</RootNamespace>
+    <AssemblyName>CheckCustomerRentsPlugin</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.34\lib\net462\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.34\lib\net462\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomerRentCheckerUpdate.cs" />
+    <Compile Include="CustomerRentsChecker.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\cr03e_car.cs" />
+    <Compile Include="Entities\cr03e_carclass.cs" />
+    <Compile Include="Entities\cr03e_cartransferreport.cs" />
+    <Compile Include="Entities\cr03e_rent.cs" />
+    <Compile Include="Entities\CrmServiceContext.cs" />
+    <Compile Include="Enums\appaction_ClientType.cs" />
+    <Compile Include="Enums\Contact_AccountRoleCode.cs" />
+    <Compile Include="Enums\Contact_Address1_AddressTypeCode.cs" />
+    <Compile Include="Enums\Contact_Address1_FreightTermsCode.cs" />
+    <Compile Include="Enums\Contact_Address1_ShippingMethodCode.cs" />
+    <Compile Include="Enums\Contact_Address2_AddressTypeCode.cs" />
+    <Compile Include="Enums\Contact_Address2_FreightTermsCode.cs" />
+    <Compile Include="Enums\Contact_Address2_ShippingMethodCode.cs" />
+    <Compile Include="Enums\Contact_Address3_AddressTypeCode.cs" />
+    <Compile Include="Enums\Contact_Address3_FreightTermsCode.cs" />
+    <Compile Include="Enums\Contact_Address3_ShippingMethodCode.cs" />
+    <Compile Include="Enums\Contact_CustomerSizeCode.cs" />
+    <Compile Include="Enums\Contact_CustomerTypeCode.cs" />
+    <Compile Include="Enums\Contact_EducationCode.cs" />
+    <Compile Include="Enums\Contact_FamilyStatusCode.cs" />
+    <Compile Include="Enums\Contact_GenderCode.cs" />
+    <Compile Include="Enums\Contact_HasChildrenCode.cs" />
+    <Compile Include="Enums\Contact_LeadSourceCode.cs" />
+    <Compile Include="Enums\Contact_msdyn_orgchangestatus.cs" />
+    <Compile Include="Enums\Contact_PaymentTermsCode.cs" />
+    <Compile Include="Enums\Contact_PreferredAppointmentDayCode.cs" />
+    <Compile Include="Enums\Contact_PreferredAppointmentTimeCode.cs" />
+    <Compile Include="Enums\Contact_PreferredContactMethodCode.cs" />
+    <Compile Include="Enums\Contact_ShippingMethodCode.cs" />
+    <Compile Include="Enums\Contact_StatusCode.cs" />
+    <Compile Include="Enums\Contact_TerritoryCode.cs" />
+    <Compile Include="Enums\cr03e_carclass_StatusCode.cs" />
+    <Compile Include="Enums\cr03e_cartransferreport_cr03e_Type.cs" />
+    <Compile Include="Enums\cr03e_cartransferreport_StatusCode.cs" />
+    <Compile Include="Enums\cr03e_car_cr03e_Carmanufacturer.cs" />
+    <Compile Include="Enums\cr03e_car_StatusCode.cs" />
+    <Compile Include="Enums\cr03e_Location.cs" />
+    <Compile Include="Enums\cr03e_rent_cr03e_Status.cs" />
+    <Compile Include="Enums\cr03e_rent_StatusCode.cs" />
+    <Compile Include="Enums\msdyn_msdyn_requirementrelationship_msdyn_resourcegroupings.cs" />
+    <Compile Include="Enums\msdyn_oc_daysofweek.cs" />
+    <Compile Include="Enums\OptionSets.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
